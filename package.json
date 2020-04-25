@@ -1,0 +1,51 @@
+{
+  "name": "react-router-v5-server-rendering",
+  "description": "Example for server rendering with React Router v5.",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "node dist/server.js",
+    "dev": "webpack && node dist/server.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "mini-css-extract-plugin": "^0.9.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "serialize-javascript": "^3.0.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uidotdev/react-router-v5-server-rendering.git"
+  },
+  "author": "Tyler McGinnis",
+  "license": "MIT",
+  "homepage": "https://github.com/uidotdev/react-router-v5-server-rendering#readme",
+  "engines": {
+    "node": "13.12.x"
+  }
+}
