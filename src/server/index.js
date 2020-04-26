@@ -11,7 +11,7 @@ app.use(express.static("dist"))
 
 app.get("*", (req, res, next) => {
   const markup = ReactDOM.renderToString(
-    <App />
+    <App data='Tyler' />
   )
 
   res.send(`

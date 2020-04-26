@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom'
 import App from '../shared/App'
 
 ReactDOM.hydrate(
-  <App />,
+  <App data='Tyler' />,
   document.getElementById('app')
 )

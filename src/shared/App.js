@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-export default function App () {
+export default function App (props) {
   return (
     <div>
-      Hello World
+      Hello {props.data}
     </div>
   )
 }
