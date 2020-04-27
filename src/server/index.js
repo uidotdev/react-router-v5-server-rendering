@@ -6,7 +6,7 @@ import App from '../shared/App'
 import serialize from "serialize-javascript"
 import { fetchPopularRepos } from '../shared/api'
 import routes from '../shared/routes'
-import { matchPath } from 'react-router-dom'
+import { StaticRouter, matchPath } from "react-router-dom"
 
 const app = express()
 
@@ -22,7 +22,9 @@ app.get("*", (req, res, next) => {
 
   promise.then((data) => {
     const markup = ReactDOM.renderToString(
-      <App data={data} />
+      <StaticRouter location={req.url} context={{}}>
+        <App data={data}/>
+      </StaticRouter>
     )
 
     res.send(`
