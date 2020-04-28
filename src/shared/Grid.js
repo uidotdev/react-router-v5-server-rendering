@@ -1,7 +1,11 @@
 import * as React from 'react'
 
-export default function Grid ({ repos }) {
- return (
+export default function Grid ({ staticContext }) {
+  const repos =  __isBrowser__
+    ? window.__INITIAL_DATA__
+    : staticContext.data
+
+  return (
     <ul className='grid'>
       {repos.map(({ name, owner, stargazers_count, html_url }, i) => (
         <li key={name}>
@@ -12,5 +16,5 @@ export default function Grid ({ repos }) {
         </li>
       ))}
     </ul>
- )
+  )
 }
