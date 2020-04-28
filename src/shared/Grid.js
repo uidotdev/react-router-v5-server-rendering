@@ -1,9 +1,32 @@
 import * as React from 'react'
+import { useParams } from 'react-router-dom'
 
-export default function Grid ({ staticContext }) {
-  const repos =  __isBrowser__
-    ? window.__INITIAL_DATA__
-    : staticContext.data
+export default function Grid ({ fetchInitialData, staticContext }) {
+  const [repos, setRepos] = React.useState(() => {
+    return __isBrowser__
+      ? window.__INITIAL_DATA__
+      : staticContext.data
+  })
+
+  const [loading, setLoading] = React.useState(
+    repos ? false : true
+  )
+
+  const { id } = useParams()
+
+  React.useEffect(() => {
+    setLoading(true)
+
+    fetchInitialData(id)
+      .then((repos) => {
+        setRepos(repos)
+        setLoading(false)
+      })
+  }, [id])
+
+  if (loading === true) {
+    return <i className='loading'>🤹‍♂️</i>
+  }
 
   return (
     <ul className='grid'>
