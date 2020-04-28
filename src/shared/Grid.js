@@ -12,17 +12,25 @@ export default function Grid ({ fetchInitialData, staticContext }) {
     repos ? false : true
   )
 
+  const fetchNewRepos = React.useRef(
+    repos ? false : true
+  )
+
   const { id } = useParams()
 
   React.useEffect(() => {
-    setLoading(true)
+    if (fetchNewRepos.current === true) {
+      setLoading(true)
 
-    fetchInitialData(id)
-      .then((repos) => {
-        setRepos(repos)
-        setLoading(false)
-      })
-  }, [id])
+      fetchInitialData(id)
+        .then((repos) => {
+          setRepos(repos)
+          setLoading(false)
+        })
+    } else {
+      fetchNewRepos.current = true
+    }
+  }, [id, fetchNewRepos])
 
   if (loading === true) {
     return <i className='loading'>🤹‍♂️</i>
