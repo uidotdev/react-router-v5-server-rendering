@@ -13,4 +13,6 @@
 
 This is the code repository for [ui.dev](https://ui.dev)'s [Server Rendering with React Router v5](http://ui.dev/react-router-v5-server-rendering) post.
 
+For the hosted project, visit __[rrv5ssr.ui.dev](https://rrv5ssr.ui.dev/)__.
+
 For more information on the full course, visit __[ui.dev/react-router-v5](https://ui.dev/react-router-v5/)__.
