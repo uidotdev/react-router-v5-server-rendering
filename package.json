@@ -2,7 +2,7 @@
   "name": "react-router-v5-server-rendering",
   "description": "Example for server rendering with React Router v5.",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack",
     "start": "node dist/server.js",
     "dev": "webpack && node dist/server.js"
   },
